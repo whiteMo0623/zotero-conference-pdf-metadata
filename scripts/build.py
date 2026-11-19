@@ -1,4 +1,6 @@
+import json
 from pathlib import Path
+from urllib.parse import urlsplit
 from zipfile import ZipFile, ZipInfo
 
 
@@ -9,6 +11,10 @@ def main():
         name: (root / name).read_bytes()
         for name in ("manifest.json", "bootstrap.js", "LICENSE")
     }
+    manifest = json.loads(files["manifest.json"])
+    update_url = urlsplit(manifest["applications"]["zotero"].get("update_url", ""))
+    if update_url.scheme != "https" or not update_url.hostname:
+        raise SystemExit("manifest.json requires an HTTPS applications.zotero.update_url")
 
     package.parent.mkdir(exist_ok=True)
     with ZipFile(package, "w") as archive:

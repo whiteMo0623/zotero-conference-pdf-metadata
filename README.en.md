@@ -11,7 +11,7 @@ A Zotero 10 desktop plugin for recognizing conference papers when you import PDF
 3. Enable automatic PDF metadata retrieval in Zotero’s settings. Drop a PDF into the item list in your personal library as a standalone attachment.
 4. After recognition finishes, inspect the PDF’s parent item. A match sets its type to Conference Paper, writes the acronym (such as `ICLR`) to Conference Name and Proceedings Title, and fills in the conference year in Date.
 
-The manifest targets **Zotero 10.0.x**. The plugin uses Zotero’s internal document recognition API. To update, install a newer XPI manually.
+The manifest targets **Zotero 10.0.x**. The plugin uses Zotero’s internal document recognition API. Download the XPI from Releases for the first installation. Zotero’s plugin manager can check for later versions.
 
 ## How it matches
 
@@ -32,7 +32,7 @@ Run the following from the repository root with Python 3. The build uses the sta
 python3 scripts/build.py
 ```
 
-The package is written to `dist/zotero-conference-pdf-metadata.xpi`. GitHub Actions checks the JavaScript syntax, manifest JSON, and XPI build. To publish a release, tag the commit with the version in `manifest.json` (for example, `v1.0.2`) and attach the generated XPI to the corresponding GitHub Release.
+The package is written to `dist/zotero-conference-pdf-metadata.xpi`. GitHub Actions checks the JavaScript syntax, manifest JSON, and XPI build. To publish a release, tag the commit with the version in `manifest.json` (for example, `v1.0.3`), attach the generated XPI to the corresponding GitHub Release, and register its version, download URL, SHA-256, and compatibility range in the [update manifest](updates.json).
 
 Issues and pull requests are welcome. For recognition reports, include the Zotero and plugin versions, steps to reproduce, the expected and actual item type and conference fields, and a public DOI or paper link if available.
 

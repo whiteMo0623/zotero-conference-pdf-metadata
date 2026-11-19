@@ -1,11 +1,12 @@
 {
   "manifest_version": 2,
   "name": "会议论文自动识别",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "识别新导入的会议论文 PDF，并将核实的会议简称和年份写入 Zotero。",
   "applications": {
     "zotero": {
       "id": "conference-pdf-metadata@codex.local",
+      "update_url": "https://raw.githubusercontent.com/whiteMo0623/zotero-conference-pdf-metadata/main/updates.json",
       "strict_min_version": "10.0",
       "strict_max_version": "10.0.*"
     }

@@ -11,7 +11,7 @@
 3. 在 Zotero 设置中启用自动检索 PDF 元数据，再将 PDF 拖入个人文库的条目列表。请将文件添加为独立附件，以触发自动识别。
 4. 识别完成后查看 PDF 的父条目。匹配成功时，条目类型为「会议论文」，会议名称和论文集标题会显示会议简称，例如 `ICLR`，日期会补上会议年份。
 
-插件声明兼容 **Zotero 10.0.x**，并依赖 Zotero 内部的文件识别接口。当前版本通过手动安装新版 XPI 更新。
+插件声明兼容 **Zotero 10.0.x**，并依赖 Zotero 内部的文件识别接口。首次安装请从 Releases 下载 XPI，后续版本可由 Zotero 的插件管理器检查更新。
 
 ## 匹配范围
 
@@ -32,7 +32,7 @@
 python3 scripts/build.py
 ```
 
-安装包生成在 `dist/zotero-conference-pdf-metadata.xpi`。GitHub Actions 会检查脚本语法、清单 JSON 和 XPI 打包。维护者发布版本时，使用与 `manifest.json` 版本号一致的标签（如 `v1.0.2`），并将生成的 XPI 附到对应的 GitHub Release。
+安装包生成在 `dist/zotero-conference-pdf-metadata.xpi`。GitHub Actions 会检查脚本语法、清单 JSON 和 XPI 打包。维护者发布版本时，使用与 `manifest.json` 版本号一致的标签（如 `v1.0.3`），将生成的 XPI 附到对应的 GitHub Release，并在 [更新清单](updates.json) 中登记版本、下载地址、SHA-256 和兼容范围。
 
 欢迎提交 Issue 或 PR。反馈识别问题时，请提供 Zotero 与插件版本、复现步骤、预期与实际的条目类型和会议字段，以及可公开的 DOI 或论文链接（如有）。
 
