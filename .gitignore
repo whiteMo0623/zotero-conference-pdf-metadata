@@ -1,0 +1,5 @@
+.DS_Store
+/dist/
+*.xpi
+__pycache__/
+*.py[cod]

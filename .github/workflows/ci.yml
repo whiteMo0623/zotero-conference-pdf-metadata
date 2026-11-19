@@ -1,0 +1,25 @@
+name: Check plugin
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check JavaScript and manifest
+        run: |
+          node --check bootstrap.js
+          python3 -m json.tool manifest.json > /dev/null
+      - name: Build and check XPI
+        run: |
+          python3 scripts/build.py
+          python3 -m zipfile -t dist/zotero-conference-pdf-metadata.xpi
